@@ -37,3 +37,15 @@ Knowledge engine (MCP server). Makes agent expertise searchable, trustworthy, an
 - After each shipped feature → run retrospective
 - When a technique evolves → update procedure
 <!-- end uni-init v1 -->
+
+## Jurati
+
+Harness that uses Unimatrix to deliver structured SDLC.
+
+### Product Ownership
+
+| Skill | When to Use |
+|-------|-------------|
+| `/j-queen` | Product-owner pair for Jurati — shape/evolve the vision, evaluate feature alignment, shepherd processes, and create new specialists. Conversational; does NOT develop or fix code. |
+
+The Jurati Queen is the human's pair across the full span of product ownership. It interacts with delivery teams as their product-side counterpart, evaluates and evolves the SDLC processes, and authors new agent/skill definitions (`.claude/agents/`, `.claude/skills/`) as the harness grows — but never writes or fixes application code.
