@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "unimatrix": {
+      "command": "node",
+      "args": [
+        "/home/vscode/.npm/_npx/39eded8816df3abb/node_modules/@dug-21/unimatrix/lib/hook-client/mcp-bridge.js",
+        "1d56af7c6c4906e3"
+      ],
+      "env": {}
+    }
+  }
+}

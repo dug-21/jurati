@@ -1,0 +1,92 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node /home/vscode/.npm/_npx/39eded8816df3abb/node_modules/@dug-21/unimatrix/lib/hook-client/index.js SessionStart"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node /home/vscode/.npm/_npx/39eded8816df3abb/node_modules/@dug-21/unimatrix/lib/hook-client/index.js Stop"
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node /home/vscode/.npm/_npx/39eded8816df3abb/node_modules/@dug-21/unimatrix/lib/hook-client/index.js UserPromptSubmit"
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "^context_cycle$|^mcp__unimatrix__context_cycle$",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node /home/vscode/.npm/_npx/39eded8816df3abb/node_modules/@dug-21/unimatrix/lib/hook-client/index.js PreToolUse"
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node /home/vscode/.npm/_npx/39eded8816df3abb/node_modules/@dug-21/unimatrix/lib/hook-client/index.js PostToolUse"
+          }
+        ]
+      }
+    ],
+    "PostToolUseFailure": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node /home/vscode/.npm/_npx/39eded8816df3abb/node_modules/@dug-21/unimatrix/lib/hook-client/index.js PostToolUseFailure"
+          }
+        ]
+      }
+    ],
+    "PreCompact": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node /home/vscode/.npm/_npx/39eded8816df3abb/node_modules/@dug-21/unimatrix/lib/hook-client/index.js PreCompact"
+          }
+        ]
+      }
+    ],
+    "SubagentStart": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node /home/vscode/.npm/_npx/39eded8816df3abb/node_modules/@dug-21/unimatrix/lib/hook-client/index.js SubagentStart"
+          }
+        ]
+      }
+    ]
+  }
+}

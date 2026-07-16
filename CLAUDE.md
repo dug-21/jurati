@@ -1,0 +1,70 @@
+<!-- uni-init v1: DO NOT REMOVE THIS LINE -->
+## Unimatrix
+
+Knowledge engine (MCP server). Makes agent expertise searchable, trustworthy, and self-improving.
+
+### Available Skills
+
+| Skill | When to Use |
+|-------|-------------|
+| `/uni-init` | First-time setup: wire CLAUDE.md and get agent orientation |
+| `/uni-seed` | Populate Unimatrix with foundational repo knowledge |
+| `/uni-store-adr` | After each architectural decision — stores the ADR |
+| `/uni-store-lesson` | After failures and gate rejections — prevents recurrence |
+| `/uni-store-pattern` | When a reusable implementation pattern emerges |
+| `/uni-store-procedure` | When a step-by-step how-to technique evolves |
+| `/uni-knowledge-search` | Semantic search across knowledge before implementing |
+| `/uni-knowledge-lookup` | Deterministic lookup by feature, category, or ID |
+| `/uni-query-patterns` | Query component patterns before designing or coding |
+| `/uni-retro` | Post-merge retrospective — extract and store what was learned |
+| `/uni-review-pr` | PR security review and merge readiness check |
+| `/uni-zero` | Strategic advisor for product evolution and vision alignment |
+
+### Knowledge Categories
+
+| Category | What Goes Here |
+|----------|---------------|
+| `decision` | Architectural decisions (ADRs) — use `/uni-store-adr` |
+| `pattern` | Reusable implementation patterns — use `/uni-store-pattern` |
+| `procedure` | Step-by-step workflows — use `/uni-store-procedure` |
+| `convention` | Project-wide coding/process standards |
+| `lesson-learned` | Post-failure takeaways — use `/uni-store-lesson` |
+
+### When to Invoke
+
+- Before implementing anything new → search knowledge base
+- After each architectural decision → store ADR
+- After each shipped feature → run retrospective
+- When a technique evolves → update procedure
+<!-- end uni-init v1 -->
+
+## Jurati
+
+Harness that uses Unimatrix to deliver structured SDLC.
+
+### Product Ownership
+
+| Skill | When to Use |
+|-------|-------------|
+| `/j-queen` | Product-owner pair for Jurati — shape/evolve the vision, evaluate feature alignment, shepherd processes, and create new specialists. Conversational; does NOT develop or fix code. |
+
+The Jurati Queen is the human's pair across the full span of product ownership. It interacts with delivery teams as their product-side counterpart, evaluates and evolves the SDLC processes, and authors new agent/skill definitions (`.claude/agents/`, `.claude/skills/`) as the harness grows — but never writes or fixes application code.
+
+### Delivery Process (Unimatrix protocols)
+
+**Feature work uses swarms** — read the protocol for the session type and execute it as Design/Delivery/Bugfix Leader. You ARE the scrum master. Follow the protocol exactly — spawn specialist agents, never generate content yourself.
+
+| Intent | Session Type | Protocol |
+|--------|-------------|----------|
+| Design, scope, spec | design | `.claude/protocols/uni/uni-design-protocol.md` |
+| Implement, build, code | delivery | `.claude/protocols/uni/uni-delivery-protocol.md` |
+| Bug fix | bugfix | `.claude/protocols/uni/uni-bugfix-protocol.md` |
+| Execute research spike(s) | research | `.claude/protocols/uni/uni-research-protocol.md` |
+
+**Session type selection rule**: If `product/features/{feature-id}/IMPLEMENTATION-BRIEF.md` does not exist, use **design** regardless of stated intent — delivery cannot proceed without it.
+
+**Research session rule**: Phase 1 (scope completion) happens interactively with the human (`/j-queen` or `/uni-zero`), not in a research session. A research session begins only when SCOPE.md is complete. Single spike → route per the protocol's "Which Researcher?" cases (internal/mixed → `uni-spike-researcher`, external-only → `uni-external-researcher`, dual-track → both in parallel + synthesis). Multiple dependent spikes → invoke `uni-research-sm`.
+
+Read the SM agent definition (`.claude/agents/uni/uni-scrum-master.md`) for role boundaries and behavioral rules. The protocol defines what to do and when; the SM definition defines how you behave.
+
+For PR review: `/uni-review-pr`. For retrospective: `/uni-retro`.
