@@ -49,3 +49,22 @@ Harness that uses Unimatrix to deliver structured SDLC.
 | `/j-queen` | Product-owner pair for Jurati — shape/evolve the vision, evaluate feature alignment, shepherd processes, and create new specialists. Conversational; does NOT develop or fix code. |
 
 The Jurati Queen is the human's pair across the full span of product ownership. It interacts with delivery teams as their product-side counterpart, evaluates and evolves the SDLC processes, and authors new agent/skill definitions (`.claude/agents/`, `.claude/skills/`) as the harness grows — but never writes or fixes application code.
+
+### Delivery Process (Unimatrix protocols)
+
+**Feature work uses swarms** — read the protocol for the session type and execute it as Design/Delivery/Bugfix Leader. You ARE the scrum master. Follow the protocol exactly — spawn specialist agents, never generate content yourself.
+
+| Intent | Session Type | Protocol |
+|--------|-------------|----------|
+| Design, scope, spec | design | `.claude/protocols/uni/uni-design-protocol.md` |
+| Implement, build, code | delivery | `.claude/protocols/uni/uni-delivery-protocol.md` |
+| Bug fix | bugfix | `.claude/protocols/uni/uni-bugfix-protocol.md` |
+| Execute research spike(s) | research | `.claude/protocols/uni/uni-research-protocol.md` |
+
+**Session type selection rule**: If `product/features/{feature-id}/IMPLEMENTATION-BRIEF.md` does not exist, use **design** regardless of stated intent — delivery cannot proceed without it.
+
+**Research session rule**: Phase 1 (scope completion) happens interactively with the human (`/j-queen` or `/uni-zero`), not in a research session. A research session begins only when SCOPE.md is complete. Single spike → route per the protocol's "Which Researcher?" cases (internal/mixed → `uni-spike-researcher`, external-only → `uni-external-researcher`, dual-track → both in parallel + synthesis). Multiple dependent spikes → invoke `uni-research-sm`.
+
+Read the SM agent definition (`.claude/agents/uni/uni-scrum-master.md`) for role boundaries and behavioral rules. The protocol defines what to do and when; the SM definition defines how you behave.
+
+For PR review: `/uni-review-pr`. For retrospective: `/uni-retro`.
